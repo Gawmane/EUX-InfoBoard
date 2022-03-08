@@ -1,0 +1,10 @@
+h2 {
+  text-align: center;
+}
+section {
+  display: flex;
+  h4 {
+    padding-left: 2em;
+    text-transform: capitalize; //first letter capitalized
+  }
+}
