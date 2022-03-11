@@ -1,28 +1,26 @@
 import React, {useState, useEffect} from "react";
-
+import { customSort } from "../../../Assets/Helpers/Helpers";
 import styles from './Activities.module.scss'
 //1st way
 import Data from "./Activities.json";
 
 
 export const Activites = () => {
-
+  
   const [activities, setActivities] = useState([]);
- 
   
     useEffect(()=>{
 
-        //foodplan imported from json
-        if(Data.value.Subject == ""){
-          return 'i værksted';
-        }
+        //Activities imported from json
         setActivities(Data.value)
-        
+        // console.log(Data.value);
         
         //Dependency array [] - render 1 gang og cleaner så 
       }, []);
       
       // Returner en tabel med en række(tr) med overskrifter(th)
+
+      
       return (
         <>
       <table className={styles.table}>
@@ -36,22 +34,34 @@ export const Activites = () => {
 
   </tr>
   {/* Laver map hvor vi henter vores aktivites data */}
-      {activities && activities.map((item, index ) => {
+      {activities && activities.map((item, index) => {
+        
+        item.StartDate = item.StartDate.replace("+01:00", "+00:00");
+            // Sætter tidsformat til time:minut på property item.Time
+        item.Time = new Date(item.StartDate).toLocaleTimeString(
+          'en-GB', {
+          hour: '2-digit',
+          minute: '2-digit'
+        })
         
         
         //   Returner en række med vores kl,fag,uddanelse,holdnummer og lokale
+        
         return(
           
           <tr key={index} >
-                <td>KLOKKEN</td>
+              <td>{item.Time}</td>
                <td>{item.Subject ? item.Subject : "?"}</td>
                <td>{item.Education}</td>
                <td>{item.Team}</td>
                <td>{item.Room ? item.Room : "I værksted"}</td>
             </tr> 
           )
+          
+          
         })}
-        </tbody>
+        
+          </tbody>
         </table>
      </>   
    
