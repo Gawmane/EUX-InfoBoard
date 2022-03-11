@@ -11,7 +11,7 @@
             const url = 'https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.dr.dk%2Fnyheder%2Fservice%2Ffeeds%2Fallenyheder%23'
              const result = await axios.get(url)
              setNews(result.data.items);
-             console.log(result)
+            //  console.log(result)
         }
          getData() 
          //Dependency array [] - render 1 gang og cleaner så 
