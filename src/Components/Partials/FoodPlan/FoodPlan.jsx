@@ -1,35 +1,43 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import style from './FoodPlan.module.scss'
+import foodplan from '../../../Assets/Data/FoodPlan.json'
+import { MdFastfood } from "react-icons/md";
 
 export const Menu = () => {
+
+    //using json instead of api
     const [menu, setMenu] = useState([]);
-    
-    //fetch api
-    useEffect(() => {
-        const getData = async () => {
-            const url = 'https://infoskaerm.techcollege.dk/umbraco/api/content/getcanteenmenu/?type=json';
-            const result = await axios.get(url);
-            console.log(result);
-            setMenu(result.data.Days)
-        }
-        getData();
-    }, [setMenu])
+    useEffect(()=>{
+        //foodplan imported from json
+        setMenu(foodplan.Days)
+    })
+
+    // //fetch api
+    // useEffect(() => {
+    //     const getData = async () => {
+    //         const url = 'https://infoskaerm.techcollege.dk/umbraco/api/content/getcanteenmenu/?type=json';
+    //         const result = await axios.get(url);
+    //         //console.log(result);
+    //         setMenu(result.data.Days)
+    //     }
+    //     getData();
+    // }, [setMenu])
 
     return (
-        <>
-            <h2>Ugens menu </h2>
+        <section className={style.foodplanwrapper}>
+            {/* bruger icon som er installeret og importet først fra react icon */}
+            <h2>Ugens menu <MdFastfood/></h2>
             
-            {/* mapping the result */}
-            {menu && menu.map(dish => {
+            {/* mapper resultat */}
+            {menu && menu.map((dish,index) => {
                 return (
-                    <section key={dish.id} >
-                        <h4 className={style.day}>{dish.DayName}</h4>
+                    <section key={index} className={style.foodplansection}>
+                        <h4>{dish.DayName}</h4>
                         <h4>{dish.Dish}</h4>
-                        
                     </section>
                 )
             })}
-        </>
+        </section>
     )
 }
