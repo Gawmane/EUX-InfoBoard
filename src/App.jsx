@@ -4,14 +4,19 @@ import './App.scss';
 import {  NewsFeed } from './Components/Partials/NewsFeed/NewsFeed';
 import { ClockFunc } from './Components/Partials/Clock/Clock';
 import { Menu } from './Components/Partials/FoodPlan/FoodPlan';
+import { ShowWeather } from './Components/Partials/WeatherBox/WeatherBox';
+import { Activites } from './Components/Partials/Activities/Activites';
 
 function App() {
   return (
     <div>
-      <h1>hej igen</h1>
-      <NewsFeed/>
-      <Menu />
-      <ClockFunc />
+      <Activites/>
+        <ShowWeather/> 
+     
+       <NewsFeed/> 
+       <Menu /> 
+       <ClockFunc /> 
+     
     </div>
   );
 }
