@@ -1,9 +1,14 @@
-.busplansection {
-  display: grid;
-  grid-template-columns: 20% 60% 20%;
-  width: 800px;
-  background-color: rgb(236, 234, 234);
-  h4 {
-    padding-left: 1em;
+.busplanwrapper {
+  h2 {
+    text-align: center;
+    padding: 1em;
+  }
+  .busplansection {
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    h4 {
+      padding-left: 1em;
+      padding-bottom: 0.5em;
+    }
   }
 }

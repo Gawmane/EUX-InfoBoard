@@ -1,36 +1,34 @@
-body {
-    font-size: 1.7vw;
-    padding: 0 2vw;
-    table {
-        border-collapse: collapse; //det her gør at der ikke er hul imellem linjerne
-        height: 95vh;
-        color: rgba(0, 0, 0, 0.575);
-        tr {
-            border-bottom: 1px solid rgba(0, 0, 0, 0.171);
-            th:nth-child(2) {
-                padding-right: 6.4vw;
-            }
-            td:last-child {
-                padding-right: 0vw;
-            }
-            #nextDay {
-                font-size: 2vw;
-                font-weight: bold;
-            }
-            th {
-                padding-bottom: 0.41vw;
-                padding-top: 2vw;
-                height: 5vh;
-                text-align: left;
-                text-transform: uppercase;
-                font-size: 2.2vw;
-                color: rgba(0, 0, 0, 0.637);
-            }
-            td {
-                padding-bottom: 0.35vw;
-                padding-right: 4.5vw;
-                height: 3vh;
-            }
-        }
+@import "../../../Assets/Helpers/variables";
+
+.table {
+  width: 100%;
+  border-collapse: collapse; //det her gør at der ikke er hul imellem linjerne
+  height: 90%;
+  color: rgba(0, 0, 0, 0.575);
+  tr {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.171);
+    th:nth-child(2) {
+      padding-right: 6.4vw;
     }
+    td:last-child {
+      padding-right: 0vw;
+    }
+    th {
+      background-color: $lightblue;
+      padding-bottom: 0.41vw;
+      padding-top: 0.5vw;
+      height: 5vh;
+      text-align: left;
+      padding-left: 0.5em;
+      text-transform: uppercase;
+      font-size: 2svw;
+      color: rgba(0, 0, 0, 0.637);
+    }
+    td {
+      padding-bottom: 0.35vw;
+      padding-right: 4.5vw;
+      height: 3vh;
+      padding-left: 0.5em;
+    }
+  }
 }

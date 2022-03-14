@@ -17,24 +17,21 @@
          //Dependency array [] - render 1 gang og cleaner så 
      }, [setNews]);
      
-    
-
    
  return(
-     <>
+     <div className={styles.news}>
      {/* Marqee tag med en hastighed på 6 */}
-      <marquee scrollamount="6">
+      <marquee  scrollamount="6">
            
             {/* mapper vores array(api) */}
             {news && news.map((item, index) => {
 
                 // I vores return laver vi en span med et key og herefter insætter data og bullet
                 return(
-                    <span key={index}> {item.title}  <span className={styles.bullet}> &bull;</span>    </span>
+                  <span  key={index}> {item.title}  <span className={styles.bullet}> &bull;</span>  </span>
                 )
             })}
         </marquee>
-     </>
+     </div>
  )
-
  }

@@ -15,11 +15,11 @@ export const Activites = () => {
         activitiesArray.sort((a,b)=> {
           return new Date(a.StartDate) - new Date(b.StartDate);
         })
-        const today = new Date();
-        //...................set date manually for testing
+        // const today = new Date();
+        // // set date manually for testing
         // today.setDate(9)
         // today.setHours(6,0)
-        //.......................... //filter all past activities 
+        //  //filter all past activities 
         // activitiesArray = activitiesArray.filter((activity) => {
         //   return new Date(activity.StartDate) > today;
         // })
