@@ -1,7 +1,15 @@
+@import "../../../Assets/Helpers/variables";
+
 .clock {
-    border: 2px solid black;
-    width: 10%;
-    margin-left: 1em;
-    text-align: center;
-    text-transform: capitalize;
+  text-align: center;
+  text-transform: capitalize;
+  height: 10vh;
+  font-size: 2.5vh;
+
+  .timeInd {
+    font-size: 3.5em;
+    font-weight: bold;
+    color: $darkblue;
+    -webkit-text-stroke: 4px black;
+  }
 }

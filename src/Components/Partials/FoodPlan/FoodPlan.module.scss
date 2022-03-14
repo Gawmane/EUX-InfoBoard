@@ -1,9 +1,14 @@
-.foodplansection {
-  display: grid;
-  grid-template-columns: 20% 80%;
-  width: 800px;
-  h4 {
-    padding: 0 1em 0 1em;
+.foodplanwrapper {
+  font-size: 1.5vh;
+  h2 {
+    text-align: center;
+    padding: 1em;
   }
-  background-color: rgb(236, 234, 234);
+  .foodplansection {
+    display: grid;
+    grid-template-columns: 20% 80%;
+    h4 {
+      padding: 0.5em 1em 0.5em 1em;
+    }
+  }
 }

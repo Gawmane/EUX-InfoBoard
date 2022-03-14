@@ -1,3 +1,13 @@
+@import "../../../Assets/Helpers/variables";
+
+.news {
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+  padding-top: 0.5em;
+  font-size: 1.5em;
+  background-color: $orange;
+}
 .bullet {
-    padding: 1em;
+  padding: 1em;
 }
