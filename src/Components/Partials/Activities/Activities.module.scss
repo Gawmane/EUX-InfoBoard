@@ -1,35 +1,41 @@
 @import "../../../Assets/Helpers/variables";
-.aktivitieswrapper {
+.aktivitiesWrapper {
   display: grid;
   grid-template-columns: auto auto;
-
-.table {
+  column-gap: 1em;
+  h2 {
+    font-size: 2vw;
+    text-align: center;
+    background-color: $darkblue;
+    color: $orange;
+  }
+  .table {
     width: 100%;
     border-collapse: collapse; //det her gør at der ikke er hul imellem linjerne
-    height: 90%;
     color: rgba(0, 0, 0, 0.575);
+    border: solid 1.5px $darkblue;
     tr {
-        border-bottom: 1px solid rgba(0, 0, 0, 0.171);
-        //Tabel header - overskriften
-        th {
-            background-color: $darkblue;
-            color: $orange;
-            padding-bottom: 0.41vw;
-            padding-top: 0.5vw;
-            height: 5vh;
-            text-align: left;
-            padding-left: 0.2em;
-            text-transform: uppercase;
-            font-size: 2vw;
-        }
-        //TD hver column 
-        td {
-            padding-bottom: 0.45vw;
-            height: 3vh;
-            padding-left: 0.5em;
-            background-color: $BGorange;
-            color: $darkblue;
-        }
+      border-bottom: 1px solid rgba(0, 0, 0, 0.171);
+      //Tabel header - overskriften
+      th {
+        background-color: $darkblue;
+        color: $orange;
+        padding-bottom: 0.41vw;
+        padding-top: 0.5vw;
+        height: 5vh;
+        text-align: left;
+        padding-left: 0.2em;
+        text-transform: uppercase;
+        font-size: 1vw;
+      }
+      //TD hver column
+      td {
+        padding-bottom: 0.45vw;
+        height: 3vh;
+        padding-left: 0.5em;
+        //background-color: $BGorange;
+        color: $darkblue;
+      }
     }
-}
+  }
 }
