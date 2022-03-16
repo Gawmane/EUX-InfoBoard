@@ -1,12 +1,12 @@
 @import "../../../Assets/Helpers/variables";
-.busplanwrapper {
+.busPlanWrapper {
     font-size: 1em;
     h2 {
         text-align: center;
         padding: 1em;
         color: $orange;
     }
-    .busplansection {
+    .busPlanSection {
         display: grid;
         grid-template-columns: 20% 60% 20%;
         p {
