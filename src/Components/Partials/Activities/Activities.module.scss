@@ -1,4 +1,8 @@
 @import "../../../Assets/Helpers/variables";
+.aktivitieswrapper {
+  display: grid;
+  grid-template-columns: auto auto;
+
 .table {
     width: 100%;
     border-collapse: collapse; //det her gør at der ikke er hul imellem linjerne
@@ -27,4 +31,5 @@
             color: $darkblue;
         }
     }
+}
 }
