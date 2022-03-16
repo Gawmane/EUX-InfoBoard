@@ -1,7 +1,8 @@
+@import "../../../Assets/Helpers/variables";
 .weatherWrapper {
-  text-align: center;
-
-  p {
-    font-size: 4em;
-  }
+    text-align: center;
+    p {
+        font-size: 2em;
+        color: $darkblue;
+    }
 }
