@@ -1,34 +1,46 @@
 @import "../../../Assets/Helpers/variables";
-
-.table {
-  width: 100%;
-  border-collapse: collapse; //det her gør at der ikke er hul imellem linjerne
-  height: 90%;
-  color: rgba(0, 0, 0, 0.575);
-  tr {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.171);
-    th:nth-child(2) {
-      padding-right: 6.4vw;
+.aktivitieswrapper {
+  display: grid;
+  grid-template-columns: auto auto;
+  .table {
+    width: 100%;
+    border-collapse: collapse; //det her gør at der ikke er hul imellem linjerne
+    height: 400px;
+    display: block;
+    color: rgba(0, 0, 0, 0.575);
+    overflow-y: scroll;
+    thead {
+      width: 100%;
+      th:nth-child(2) {
+        padding-right: 6.4vw;
+      }
+      td:last-child {
+        padding-right: 0vw;
+      }
+      th {
+        background-color: $lightblue;
+        padding-bottom: 0.41vw;
+        padding-top: 0.5vw;
+        height: 5vh;
+        text-align: left;
+        padding-left: 0.5em;
+        text-transform: uppercase;
+        font-size: 2svw;
+        color: rgba(0, 0, 0, 0.637);
+      }
     }
-    td:last-child {
-      padding-right: 0vw;
-    }
-    th {
-      background-color: $lightblue;
-      padding-bottom: 0.41vw;
-      padding-top: 0.5vw;
-      height: 5vh;
-      text-align: left;
-      padding-left: 0.5em;
-      text-transform: uppercase;
-      font-size: 2svw;
-      color: rgba(0, 0, 0, 0.637);
-    }
-    td {
-      padding-bottom: 0.35vw;
-      padding-right: 4.5vw;
-      height: 3vh;
-      padding-left: 0.5em;
+    tbody {
+      width: 100%;
+      tr {
+        width: 100%;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.171);
+        td {
+          padding-bottom: 0.35vw;
+          padding-right: 4.5vw;
+          height: 3vh;
+          padding-left: 0.5em;
+        }
+      }
     }
   }
 }
