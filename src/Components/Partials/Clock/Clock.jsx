@@ -8,7 +8,7 @@ export const ClockFunc = () => {
     // Tilføjer useEffect således at man kan sætte et interval og så uret opdaterer sig selv.
     useEffect (() => {
         // Opdaterer nu uret hvert 30 sekund.
-        setInterval(() => setDateState(new Date()), 30000);
+        setInterval(() => setDateState(new Date()), 1000);
     }, []);
 
     // Her returneres ClockFunc
