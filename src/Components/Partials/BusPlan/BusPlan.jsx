@@ -7,7 +7,7 @@ export const BusPlan = () => {
     const [busplan, setBusPlan] = useState([]);
 
     //fetch
-    useEffect(()=> {
+    useEffect(() => {
         const getData = async () => {
             const url = 'https://xmlopen.rejseplanen.dk/bin/rest.exe/multiDepartureBoard?id1=851400602&id2=851973402&rttime&format=json&useBus=1';
             const result = await axios.get(url);
@@ -17,7 +17,7 @@ export const BusPlan = () => {
         }
         getData();
         
-    }, 5000 [setBusPlan])
+    },5000 [setBusPlan])
 
     return (
         <section className={style.busplanwrapper}>
