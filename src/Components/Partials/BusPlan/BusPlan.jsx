@@ -13,9 +13,11 @@ export const BusPlan = () => {
             const result = await axios.get(url);
             //console.log(result.data.MultiDepartureBoard.Departure.slice(0, 5));
             setBusPlan(result.data.MultiDepartureBoard.Departure.slice(0, 3))
+         
         }
         getData();
-    }, [setBusPlan])
+        
+    }, 5000 [setBusPlan])
 
     return (
         <section className={style.busplanwrapper}>
@@ -25,9 +27,9 @@ export const BusPlan = () => {
         {busplan.map((plan,index) => {
             return (
                 <section key={index} className={style.busplansection}>
-                    <h4>{plan.line}</h4>
-                    <h4>{plan.direction}</h4>
-                    <h4>{plan.time}</h4>
+                    <p>{plan.line}</p>
+                    <p>{plan.direction}</p>
+                    <p className={style.timer}>{plan.time}</p>
                 </section>
             )
         })}

@@ -1,14 +1,21 @@
+@import "../../../Assets/Helpers/variables";
 .foodplanwrapper {
-  font-size: 1.5vh;
-  h2 {
-    text-align: center;
-    padding: 1em;
-  }
-  .foodplansection {
-    display: grid;
-    grid-template-columns: 20% 80%;
-    h4 {
-      padding: 0.5em 1em 0.5em 1em;
+    font-size: 1em;
+    h2 {
+        text-align: center;
+        padding: 1em;
+        color: $orange;
     }
-  }
+    .foodplansection {
+        display: grid;
+        grid-template-columns: 20% 80%;
+        p {
+            padding-left: 1em;
+            padding-bottom: 0.5em;
+            color: $darkblue;
+        }
+        .capitalize {
+            text-transform: capitalize;
+        }
+    }
 }
