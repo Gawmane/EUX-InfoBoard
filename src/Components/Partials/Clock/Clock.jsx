@@ -3,6 +3,7 @@ import Style from "./Clock.module.scss";
 
 // Laver en funktion til uret
 export const ClockFunc = () => {
+
   // Laver en dateState med et useState hook
   const [DateState, setDateState] = useState(new Date());
   // Tilføjer useEffect således at man kan sætte et interval og så uret opdaterer sig selv.
@@ -10,6 +11,7 @@ export const ClockFunc = () => {
     // Opdaterer nu uret hvert 30 sekund.
     setInterval(() => setDateState(new Date()), 1000);
   }, []);
+
 
   // Her returneres ClockFunc
   return (
