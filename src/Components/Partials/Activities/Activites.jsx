@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { customSort } from "../../../Assets/Helpers/Helpers";
 import styles from "./Activities.module.scss";
 //1st way
 import Data from "./Activities.json";
@@ -12,6 +11,18 @@ export const Activites = () => {
     //setting the activity array. all activities are here together
     let activitiesArray = Data.value;
 
+    let today = new Date();
+    //filtering activities to show only future
+    activitiesArray = activitiesArray.filter((activity) => {
+      return new Date(activity.StartDate) > today;
+    });
+    //console.log(activitiesArray);
+
+    //sort all activites by StartDate ascending
+    activitiesArray.sort((a, b) => {
+      return new Date(a.StartDate) - new Date(b.StartDate);
+    });
+
     //filtering activities to show only geux
     let geux = activitiesArray.filter((activity) => {
       return activity.Team.startsWith("geux");
@@ -21,17 +32,6 @@ export const Activites = () => {
     let eux = activitiesArray.filter((activity) => {
       return activity.Team.startsWith("eux");
     });
-
-    // sort all activites by StartDate ascending
-    activitiesArray.sort((a, b) => {
-      return new Date(a.StartDate) - new Date(b.StartDate);
-    });
-
-    // const today = new Date();
-    // //........................ set date manually for testing
-    // today.setDate(9)
-    // today.setHours(6,0)
-    //  //.........................filter all past activities
 
     //Activities imported from jsons
     setGeuxActivities(geux);
@@ -43,7 +43,7 @@ export const Activites = () => {
 
   // Returner en tabel med en række(tr) med overskrifter(th)
   return (
-    <section className={styles.aktivitieswrapper}>
+    <section className={styles.aktivitiesWrapper}>
       <section>
         <h2>Grundforløb</h2>
         <table className={styles.table}>
@@ -59,7 +59,8 @@ export const Activites = () => {
             {/* Laver map hvor vi henter vores aktiviter data */}
             {geuxactivities &&
               geuxactivities.map((item, index) => {
-                item.StartDate = item.StartDate.replace("+01:00", "+00:00");
+                item.StartDate = item.StartDate;
+                item.Subject = item.Subject.replace(", eux", "");
                 // Sætter tidsformat til time:minut på property item.Time
                 item.Time = new Date(item.StartDate).toLocaleTimeString(
                   "en-GB",
@@ -98,6 +99,7 @@ export const Activites = () => {
             {euxactivities &&
               euxactivities.map((item, index) => {
                 item.StartDate = item.StartDate.replace("+01:00", "+00:00");
+                item.Subject = item.Subject.replace(", eux", "");
                 // Sætter tidsformat til time:minut på property item.Time
                 item.Time = new Date(item.StartDate).toLocaleTimeString(
                   "en-GB",
