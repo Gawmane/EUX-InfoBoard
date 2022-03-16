@@ -2,7 +2,7 @@
 .aktivitiesWrapper {
   display: grid;
   grid-template-columns: auto auto;
-  column-gap: 1em;
+  column-gap: 0.5em;
   h2 {
     font-size: 2vw;
     text-align: center;
@@ -18,8 +18,8 @@
       border-bottom: 1px solid rgba(0, 0, 0, 0.171);
       //Tabel header - overskriften
       th {
-        background-color: $darkblue;
-        color: $orange;
+        background-color: rgba(233, 132, 74, 0.637);
+        color: $darkblue;
         padding-bottom: 0.41vw;
         padding-top: 0.5vw;
         height: 5vh;
