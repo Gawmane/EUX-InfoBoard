@@ -1,21 +1,22 @@
 @import "../../../Assets/Helpers/variables";
 .busPlanWrapper {
-    font-size: 1em;
-    h2 {
-        text-align: center;
-        padding: 1em;
-        color: $orange;
+  font-size: 1em;
+  h2 {
+    text-align: center;
+    padding: 1em;
+    color: $orange;
+  }
+  .busPlanSection {
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    p {
+      padding-left: 1em;
+      padding-bottom: 0.5em;
+      color: $darkblue;
     }
-    .busPlanSection {
-        display: grid;
-        grid-template-columns: 20% 60% 20%;
-        p {
-            padding-left: 1em;
-            padding-bottom: 0.5em;
-            color: $darkblue;
-        }
-        .timer {
-            color: $orange;
-        }
+    .timer {
+      color: $orange;
+      padding: 0;
     }
+  }
 }

@@ -1,16 +1,16 @@
 @import "../../../Assets/Helpers/variables";
 //Dato
 .clock {
-    text-align: center;
-    text-transform: capitalize;
-    font-size: 2.5vh;
-    color: $orange;
-    margin-top: 5vh;
-    //Klok
-    .timeInd {
-        font-size: 3.5em;
-        font-weight: bold;
-        color: $darkblue;
-        -webkit-text-stroke: 4px black;
-    }
+  text-align: center;
+  text-transform: capitalize;
+  font-size: 2.5vh;
+  color: $orange;
+  margin-top: 5vh;
+  //Klok
+  .timeInd {
+    font-size: 3.5em;
+    font-weight: bold;
+    color: $darkblue;
+    -webkit-text-stroke: 2px black;
+  }
 }
