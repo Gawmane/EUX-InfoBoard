@@ -10,11 +10,22 @@ export const Activites = () => {
   useEffect(() => {
     //setting the activity array. all activities are here together
     let activitiesArray = Data.value;
+    //converting all activities in the +0 timezone
+    //the browser knows, to add one hour to the dates
+    //we are in +1 normally
+    activitiesArray = activitiesArray.map((activity) => {
+      activity.StartDate.replace("+01:00", "+00:00");
+      return activity;
+    });
+    const now = new Date();
+    //now.setHours(now.getHours() - 1);
+    //now.setHours(6);
+    //now.setMinutes(0);
 
-    let today = new Date();
     //filtering activities to show only future
     activitiesArray = activitiesArray.filter((activity) => {
-      return new Date(activity.StartDate) > today;
+      const date = new Date(activity.StartDate);
+      return new Date(activity.StartDate) > now;
     });
     //console.log(activitiesArray);
 
