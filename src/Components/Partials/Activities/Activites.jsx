@@ -49,6 +49,12 @@ export const Activites = () => {
     setEuxActivities(eux);
     // console.log(Data.value);
 
+    setInterval(() => {
+      // Kalder getData inde i interval-funktionen
+      setGeuxActivities();
+      setEuxActivities();
+    }, 600000);
+
     //Dependency array [] - render 1 gang og cleaner så
   }, []);
 
