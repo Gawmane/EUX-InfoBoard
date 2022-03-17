@@ -8,6 +8,7 @@ import { ShowWeather } from "./Components/Partials/WeatherBox/WeatherBox";
 import { Activites } from "./Components/Partials/Activities/Activites";
 import { BusPlan } from "./Components/Partials/BusPlan/BusPlan";
 import logo from "../src/Assets/Images/EUX-logo.png";
+import {  Message, PostIt } from "./Components/Partials/Message/Message";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <ShowWeather />
           <Menu />
           <BusPlan />
+          <PostIt/>
         </section>
 
         <section className={style.aktiviteter}>
