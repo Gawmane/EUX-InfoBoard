@@ -1,6 +1,6 @@
 @import "../../../Assets/Helpers/variables";
 .foodplanWrapper {
-  font-size: 1em;
+  font-size: 1.5em;
   h2 {
     text-align: center;
     padding: 1em;
@@ -10,5 +10,7 @@
     text-align: center;
     padding-bottom: 0.5em;
     color: $darkblue;
+    font-size: 0.8em;
+    font-weight: bold;
   }
 }

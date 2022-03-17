@@ -9,7 +9,8 @@
     overflow: hidden;
 
     h2 {
-      font-size: 2vw;
+      font-size: 1.5vw;
+      padding: 0.5em;
       text-align: center;
       background-color: $darkblue;
       color: $orange;
@@ -29,7 +30,7 @@
           //padding-top: 0.5vw;
           height: 5vh;
           text-align: left;
-          padding-left: 0.2em;
+          padding-left: 0.4em;
           text-transform: uppercase;
           font-size: 1vw;
         }

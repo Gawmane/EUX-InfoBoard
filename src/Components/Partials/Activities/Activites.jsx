@@ -51,8 +51,8 @@ export const Activites = () => {
 
     setInterval(() => {
       // Kalder getData inde i interval-funktionen
-      setGeuxActivities();
-      setEuxActivities();
+      setGeuxActivities(geux);
+      setEuxActivities(eux);
     }, 600000);
 
     //Dependency array [] - render 1 gang og cleaner så
