@@ -1,6 +1,6 @@
 @import "../../../Assets/Helpers/variables";
 .busPlanWrapper {
-  font-size: 1em;
+  font-size: 1.5em;
   h2 {
     text-align: center;
     padding: 1em;
@@ -8,11 +8,13 @@
   }
   .busPlanSection {
     display: grid;
-    grid-template-columns: 20% 60% 20%;
+    grid-template-columns: 15% 70% 15%;
     p {
-      padding-left: 1em;
+      padding-left: 0.5em;
       padding-bottom: 0.5em;
       color: $darkblue;
+      font-size: 0.8em;
+      font-weight: bold;
     }
     .timer {
       color: $orange;
