@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import styles from "./Activities.module.scss";
-//1st way
 import Data from "./Activities.json";
 
 export const Activites = () => {
@@ -8,53 +7,62 @@ export const Activites = () => {
   const [euxactivities, setEuxActivities] = useState([]);
 
   useEffect(() => {
-    //setting the activity array. all activities are here together
-    let activitiesArray = Data.value;
-    //converting all activities in the +0 timezone
-    //the browser knows, to add one hour to the dates
-    //we are in +1 normally
-    activitiesArray = activitiesArray.map((activity) => {
-      activity.StartDate.replace("+01:00", "+00:00");
-      return activity;
-    });
-    const now = new Date();
-    //now.setHours(now.getHours() - 1);
-    //now.setHours(6);
-    //now.setMinutes(0);
+    //using the json instead of api
+    const getData = async () => {
+      //setting the activity array. (all activities are here together)
+      let activitiesArray = Data.value;
 
-    //filtering activities to show only future
-    activitiesArray = activitiesArray.filter((activity) => {
-      const date = new Date(activity.StartDate);
-      return new Date(activity.StartDate) > now;
-    });
-    //console.log(activitiesArray);
+      //taking the Data from api
+      // const url = 'https://iws.itcn.dk/techcollege/$metadata#Schedules';
+      // const activitiesArray = await axios.get(url);
 
-    //sort all activites by StartDate ascending
-    activitiesArray.sort((a, b) => {
-      return new Date(a.StartDate) - new Date(b.StartDate);
-    });
+      //converting all activities in the +0 timezone
+      //the browser knows, to add one hour to the dates
+      //we are in +1 normally
+      activitiesArray = activitiesArray.map((activity) => {
+        activity.StartDate.replace("+01:00", "+00:00");
+        return activity;
+      });
+      const now = new Date();
 
-    //filtering activities to show only geux
-    let geux = activitiesArray.filter((activity) => {
-      return activity.Team.startsWith("geux");
-    });
+      //setting the date manually to an older time, for testing (so we can use the old data)
+      // now.setDate(14)
+      // now.setHours(6)
 
-    //filtering activities to show only eux
-    let eux = activitiesArray.filter((activity) => {
-      return activity.Team.startsWith("eux");
-    });
+      //filtering activities to show only future
+      activitiesArray = activitiesArray.filter((activity) => {
+        const date = new Date(activity.StartDate);
+        return new Date(activity.StartDate) > now;
+      });
+      //console.log(activitiesArray);
 
-    //Activities imported from jsons
-    setGeuxActivities(geux);
-    setEuxActivities(eux);
-    // console.log(Data.value);
+      //sort all activites by StartDate ascending
+      activitiesArray.sort((a, b) => {
+        return new Date(a.StartDate) - new Date(b.StartDate);
+      });
 
-    setInterval(() => {
-      // Kalder getData inde i interval-funktionen
+      //filtering activities to show only geux
+      let geux = activitiesArray.filter((activity) => {
+        return activity.Team.startsWith("geux");
+      });
+
+      //filtering activities to show only eux
+      let eux = activitiesArray.filter((activity) => {
+        return activity.Team.startsWith("eux");
+      });
+
+      //Activities imported from jsons
       setGeuxActivities(geux);
       setEuxActivities(eux);
-    }, 600000);
-
+      // console.log(Data.value);
+    };
+    getData();
+    // setInterval bruges til at gentage koden hvert 5000ms (5. sekund) for at vise nyligste bustid
+    // Skal (åbentbart) skrives INDE i useEffect hooket og kalde den funktion som trækker på dataen - i dette tilfælde getData();
+    setInterval(() => {
+      // Kalder getData inde i interval-funktionen
+      getData();
+    }, 5000);
     //Dependency array [] - render 1 gang og cleaner så
   }, []);
 
