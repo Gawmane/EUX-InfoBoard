@@ -7,7 +7,7 @@ import { Menu } from "./Components/Partials/FoodPlan/FoodPlan";
 import { ShowWeather } from "./Components/Partials/WeatherBox/WeatherBox";
 import { Activites } from "./Components/Partials/Activities/Activites";
 import { BusPlan } from "./Components/Partials/BusPlan/BusPlan";
-import Logo from "../src/Assets/Images/EUX-logo.png";
+import Logo from "../src/Assets/images/EUX-logo.png";
 import {  PostIt } from "./Components/Partials/Message/Message";
 
 function App() {
