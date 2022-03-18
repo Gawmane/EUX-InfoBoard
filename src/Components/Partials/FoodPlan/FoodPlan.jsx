@@ -41,6 +41,12 @@ export const Menu = () => {
   //         setMenu(result.data.Days)
   //     }
   //     getData();
+
+  // setInterval(() => {
+  //   // Kalder getData inde i interval-funktionen hver time
+  //   getData();
+  // }, 60000);
+
   // }, [setMenu])
 
   return (
