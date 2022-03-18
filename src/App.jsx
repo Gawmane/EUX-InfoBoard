@@ -7,15 +7,15 @@ import { Menu } from "./Components/Partials/FoodPlan/FoodPlan";
 import { ShowWeather } from "./Components/Partials/WeatherBox/WeatherBox";
 import { Activites } from "./Components/Partials/Activities/Activites";
 import { BusPlan } from "./Components/Partials/BusPlan/BusPlan";
-import logo from "../src/Assets/Images/EUX-logo.png";
-import {  Message, PostIt } from "./Components/Partials/Message/Message";
+import Logo from "../src/Assets/Images/EUX-logo.png";
+import {  PostIt } from "./Components/Partials/Message/Message";
 
 function App() {
   return (
     <>
       <div className={style.wrapper}>
         <section className={style.leftside}>
-          <img src={logo} alt="Logo" className={style.logo} />
+          <img src={Logo} alt="Logo" className={style.logo} />
           <ClockFunc />
           <ShowWeather />
           <Menu />
